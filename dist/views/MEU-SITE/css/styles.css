@@ -1,0 +1,133 @@
+/* Cores inspiradas em designs orientais */
+:root {
+    --primary-color: #2c3e50;
+    /* Azul escuro */
+    --secondary-color: #e74c3c;
+    /* Vermelho suave */
+    --background-color: #f9f9f9;
+    /* Fundo claro */
+    --text-color: #333;
+    /* Cor do texto */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+}
+
+body {
+    background-image: url('imagemdefundo.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+header p {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+.about {
+    margin: 40px 0;
+}
+
+.about h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.social-links h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.social-links .icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 3rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+    color: var(--secondary-color);
+}
+
+/* Animação de flutuação */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.social-links a {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeIn 1s ease-out;
+}
+
+.about,
+.social-links {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about:hover,
+.social-links:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px var(--shadow-color);
+}
